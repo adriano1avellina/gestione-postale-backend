@@ -1,0 +1,18 @@
+# Node
+node_modules/
+
+# React build
+gestionale-frontend/build/
+
+# File di ambiente
+.env
+
+# Log e file temporanei
+*.log
+.DS_Store
+Thumbs.db
+
+# File eseguibili
+*.exe
+*.msi
+*.zip

@@ -1,0 +1,71 @@
+Create Postman account
+mIMID45KJ_ff5453_!
+
+gib account
+info@esmnovara.it
+G!B!Man_776697
+adriano1avellina
+
+git remote add origin https://github.com/adriano1avellina/gestione-postale-backend.git
+
+DATABASE OONLINE
+INFO@ESMNOVARA.IT
+$_6!WAKc9BDsS&U
+
+database
+MIMI7766
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'gestionale_postale',
+  password: 'MIMI7766', // <-- sostituisci con la tua password reale
+  port: 5432,
+});
+database
+MIMI7766
+const pool = new Pool({
+  user: 'postgres',
+  host: 'localhost',
+  database: 'gestionale_postale',
+  password: 'MIMI7766', // <-- sostituisci con la tua password reale
+  port: 5432,
+});
+
+demo
+password123
+
+PERCORSO SERVER RIAVVIO BACK END:
+CD C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE
+node index.js
+
+
+frontend React 
+cd "C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE\gestionale-frontend"
+npm start
+
+
+SALVATAGGIO_ CAMBIARE INFO DI MESSAGGIO
+CD C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE
+git add .
+git commit -m "tutto pronto per pubblicazoine"
+
+https://chatgpt.com/share/686f68fe-2400-8009-a74e-1ac2339a8328
+
+C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE
+node index.js
+
+
+frontend React 
+cd "C:\Users\silvi\Desktop\ESM\gestionale-frontend"
+npm start
+cd "C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE\gestionale-frontend"
+npm start
+
+
+SALVATAGGIO_ CAMBIARE INFO DI MESSAGGIO
+CD C:\Users\silvi\Desktop\ESM\PROGETTO GESTIONE POSTALE
+git add .
+git commit -m "tutto pronto per pubblicazoine"
+
+https://chatgpt.com/share/686f68fe-2400-8009-a74e-1ac2339a8328
+
