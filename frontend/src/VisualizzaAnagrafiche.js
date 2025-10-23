@@ -89,7 +89,7 @@ export default function VisualizzaAnagrafiche({ token }) {
       if (search) params.append("search", search);
       if (filterAzienda) params.append("azienda", filterAzienda);
       if (filterSede) params.append("sede", filterSede);
-      const url = `http://localhost:3000/clienti?${params.toString()}`;
+      const url = `http://localhost:5000/clienti?${params.toString()}`;
    try {
   const res = await fetch(url, {
     headers: { Authorization: `Bearer ${token}` },
@@ -121,8 +121,8 @@ export default function VisualizzaAnagrafiche({ token }) {
     e.preventDefault();
     const method = editingId ? "PUT" : "POST";
     const endpoint = editingId
-      ? `http://localhost:3000/clienti/${editingId}`
-      : "http://localhost:3000/clienti";
+      ? `http://localhost:5000/clienti/${editingId}`
+      : "http://localhost:5000/clienti";
 
     const payload = { ...form };
 
@@ -156,7 +156,7 @@ export default function VisualizzaAnagrafiche({ token }) {
   const elimina = async (id) => {
     if (!window.confirm("Confermi cancellazione?")) return;
     try {
-      const res = await fetch(`http://localhost:3000/clienti/${id}`, {
+      const res = await fetch(`http://localhost:5000/clienti/${id}`, {
         method: "DELETE",
         headers: { Authorization: `Bearer ${token}` },
       });
@@ -192,7 +192,7 @@ export default function VisualizzaAnagrafiche({ token }) {
       header: true,
       skipEmptyLines: true,
       complete: async ({ data }) => {
-        await fetch("http://localhost:3000/clienti/bulk", {
+        await fetch("http://localhost:5000/clienti/bulk", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -200,7 +200,7 @@ export default function VisualizzaAnagrafiche({ token }) {
           },
           body: JSON.stringify(data),
         });
-        const res = await fetch("http://localhost:3000/clienti", {
+        const res = await fetch("http://localhost:5000/clienti", {
           headers: { Authorization: `Bearer ${token}` },
         });
         setRows(await res.json());

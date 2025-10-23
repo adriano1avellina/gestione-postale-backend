@@ -15,10 +15,19 @@ app.use(cors());
 const upload = multer({ dest: "uploads/" });
 
 // Connessione PostgreSQL
+//const pool = new Pool({
+  //connectionString: process.env.DATABASE_URL,
+ // ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+//});
 const pool = new Pool({
-  connectionString: process.env.DATABASE_URL,
+  host: process.env.PGHOST,
+  port: process.env.PGPORT,
+  user: process.env.PGUSER,
+  password: process.env.PGPASSWORD,
+  database: process.env.PGDATABASE,
   ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
 });
+
 
 // ================== MIDDLEWARE ==================
 const verificaAdmin = (req, res, next) => {
@@ -513,6 +522,16 @@ app.get("/api/celle", async (req, res) => {
   } catch (err) {
     console.error("Errore caricando celle:", err.message);
     res.status(500).json({ error: "Errore caricando celle" });
+  }
+});
+// ================== HEALTH CHECK ==================
+app.get("/api/health", async (req, res) => {
+  try {
+    const result = await pool.query("SELECT 1 AS ok");
+    res.json({ ok: true, db: result.rows[0].ok === 1 });
+  } catch (err) {
+    console.error("Errore connessione DB:", err.message);
+    res.status(500).json({ ok: false, error: err.message });
   }
 });
 

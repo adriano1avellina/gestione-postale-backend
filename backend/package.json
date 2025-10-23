@@ -2,11 +2,12 @@
   "name": "progetto-gestione-postale",
   "version": "1.0.0",
   "main": "index.js",
- "scripts": {
-  "dev": "set NODE_ENV=development && node index.js",
-  "start": "set NODE_ENV=production && node index.js",
+"scripts": {
+  "dev": "node index.js",
+  "start": "node index.js",
   "test": "echo \"Error: no test specified\" && exit 1"
 },
+
   "keywords": [],
   "author": "",
   "license": "ISC",
