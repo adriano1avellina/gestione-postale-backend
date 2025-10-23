@@ -14,19 +14,19 @@ app.use(express.json());
 app.use(cors());
 const upload = multer({ dest: "uploads/" });
 
-// Connessione PostgreSQL
-//const pool = new Pool({
-  //connectionString: process.env.DATABASE_URL,
- // ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
-//});
+// ================== CONNESSIONE DATABASE ==================
 const pool = new Pool({
-  host: process.env.PGHOST,
-  port: process.env.PGPORT,
-  user: process.env.PGUSER,
-  password: process.env.PGPASSWORD,
-  database: process.env.PGDATABASE,
-  ssl: process.env.NODE_ENV === "production" ? { rejectUnauthorized: false } : false,
+  connectionString: process.env.DATABASE_URL,
+  ssl: {
+    rejectUnauthorized: false, // obbligatorio su Render
+  },
 });
+
+// Test connessione DB
+pool.connect()
+  .then(() => console.log("✅ Connessione al DB riuscita"))
+  .catch(err => console.error("❌ Errore connessione DB:", err.message));
+
 
 
 // ================== MIDDLEWARE ==================
